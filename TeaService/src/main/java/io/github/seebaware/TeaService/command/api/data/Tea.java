@@ -1,9 +1,9 @@
-package io.github.seebaware.TeaService.command.api.data.entity;
+package io.github.seebaware.TeaService.command.api.data;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
 @Data

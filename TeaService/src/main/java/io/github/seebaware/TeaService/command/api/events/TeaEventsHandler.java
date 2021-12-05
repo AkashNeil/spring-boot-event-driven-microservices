@@ -1,12 +1,15 @@
 package io.github.seebaware.TeaService.command.api.events;
 
-import io.github.seebaware.TeaService.command.api.data.entity.Tea;
-import io.github.seebaware.TeaService.command.api.data.repo.TeaRepository;
+import io.github.seebaware.TeaService.command.api.data.Tea;
+import io.github.seebaware.TeaService.command.api.data.TeaRepository;
+import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
+import org.axonframework.messaging.interceptors.ExceptionHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
 @Component
+@ProcessingGroup("tea")
 public class TeaEventsHandler {
 
     private TeaRepository teaRepository;
@@ -20,6 +23,11 @@ public class TeaEventsHandler {
         Tea tea = new Tea();
         BeanUtils.copyProperties(teaCreatedEvent, tea);
         teaRepository.save(tea);
+    }
+
+    @ExceptionHandler
+    public void handle(Exception exception) throws Exception {
+        throw exception;
     }
 
 }
