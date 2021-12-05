@@ -11,6 +11,12 @@ Description : Event driven microservices using Spring Boot.
 
 ---
 
+<h3>Project Architecture</h3>
+
+(diagram will go here)
+
+---
+
 <h3>CQRS</h3>
 
 ![cqrs](img/cqrs.png)
