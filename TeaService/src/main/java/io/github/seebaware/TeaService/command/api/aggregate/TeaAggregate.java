@@ -2,6 +2,7 @@ package io.github.seebaware.TeaService.command.api.aggregate;
 
 import io.github.seebaware.TeaService.command.api.commands.CreateTeaCommand;
 import io.github.seebaware.TeaService.command.api.events.TeaCreatedEvent;
+import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
@@ -25,6 +26,14 @@ public class TeaAggregate {
         TeaCreatedEvent teaCreatedEvent = new TeaCreatedEvent();
         BeanUtils.copyProperties(createTeaCommand, teaCreatedEvent);
         AggregateLifecycle.apply(teaCreatedEvent);
+    }
+
+    @EventSourcingHandler
+    public void on(TeaCreatedEvent teaCreatedEvent){
+        this.quantity = teaCreatedEvent.getQuantity();
+        this.teaId = teaCreatedEvent.getTeaId();
+        this.price = teaCreatedEvent.getPrice();
+        this.name = teaCreatedEvent.getName();
     }
 
 }
