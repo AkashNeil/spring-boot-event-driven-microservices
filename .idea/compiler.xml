@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="TeaService" target="17" />
+      <module name="TeaService" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

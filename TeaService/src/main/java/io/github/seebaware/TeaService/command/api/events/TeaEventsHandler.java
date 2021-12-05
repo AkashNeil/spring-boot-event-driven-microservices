@@ -19,10 +19,11 @@ public class TeaEventsHandler {
     }
 
     @EventHandler
-    public void on (TeaCreatedEvent teaCreatedEvent) {
+    public void on (TeaCreatedEvent teaCreatedEvent) throws Exception {
         Tea tea = new Tea();
         BeanUtils.copyProperties(teaCreatedEvent, tea);
         teaRepository.save(tea);
+        throw new Exception("Exception in TeaEventsHandler!");
     }
 
     @ExceptionHandler
