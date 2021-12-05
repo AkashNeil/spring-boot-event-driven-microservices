@@ -65,3 +65,21 @@ Event Replaying : In order to have materialized state reconstructed we need to t
 - In order to comply with certain regulations, it is required from a software system to provide a full audit log. Event-sourced systems give us a full audit log.
 - It can be difficult it is to investigate an incident that happened in production. Event sourcing gives us a way to replay events to a certain point in time and debug the application in a state in which the incident occurred.
 
+---
+
+Axon Server
+
+1. Get it from https://axoniq.io/download
+2. To run it :
+- Either :
+  - Unzip it to the location of your choice.
+  - Navigate to the location & run it using the command `java -jar axonserver.jar`
+- Or :
+  - Run it on Docker `docker run -d --name axonserver -p 8024:8024 -p 8124:8124 axoniq/axonserver`
+3. Go to 'localhost:8024' to see Axon Server running.
+
+---
+
+H2 Console
+
+Go to : http://localhost:8081/h2-console/
