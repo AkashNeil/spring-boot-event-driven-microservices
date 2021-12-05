@@ -13,7 +13,7 @@ Description : Event driven microservices using Spring Boot.
 
 <h3>Project Architecture</h3>
 
-(diagram will go here)
+![Event Driven](img/eventDriven.jpg)
 
 ---
 
