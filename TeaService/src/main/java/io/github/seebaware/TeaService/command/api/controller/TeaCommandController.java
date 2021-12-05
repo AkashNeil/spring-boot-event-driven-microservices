@@ -29,7 +29,7 @@ public class TeaCommandController {
                 .price(teaRestModel.getPrice())
                 .quantity(teaRestModel.getQuantity())
                 .build();
-        
+
         return commandGateway.sendAndWait(createTeaCommand);
 
     }
